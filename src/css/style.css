@@ -1,5 +1,4 @@
 .wrapper{
-    /* display: flex; */
     padding: 100px;
     background-color: brown;
 }
@@ -18,5 +17,4 @@
 
 .mask{
     width: 50px;
-
 }

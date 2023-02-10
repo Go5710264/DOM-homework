@@ -31,8 +31,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.png$/,
-        type: 'asset/resource' // т.е. вышележащие файлы нужно поместить в папку ресурсы asset
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource', // т.е. вышележащие файлы нужно поместить в папку ресурсы asset
       // Привило загрузки asset/resource работает в паре с параметром output assetModuleFilename
       },
     ],

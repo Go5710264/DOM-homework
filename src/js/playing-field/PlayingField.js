@@ -1,8 +1,10 @@
+import goblin from '../../picture/goblin.png';
+
 export default class PlayingField {
   constructor(...cells) {
     this.field = [...cells];
     this.mask = document.createElement('img');
-    this.mask.setAttribute('src', '../picture/goblin.png');
+    this.mask.setAttribute('src', goblin);
     this.mask.classList.add('mask');
     this.cellNumber = null;
   }
@@ -20,12 +22,10 @@ export default class PlayingField {
     if (this.cellNumber !== previousCell) {
       return this.field[this.cellNumber].appendChild(this.mask);
     }
+    /*    Даже в такой конструкции, есть вероятность,
+    что следующая ячейка будет иметь номер предыдущей ячейки */
 
-    // else {
-    //     console.log('ooppps')
-    //     this.cellNumber = getRandomInt();
-    //     this.field[this.cellNumber].appendChild(this.mask);
-    // }
-    // Не понимаю как как выполнить условие   без перемещения в то же самое поле
+    this.cellNumber = getRandomInt();
+    this.field[this.cellNumber].appendChild(this.mask);
   }
 }

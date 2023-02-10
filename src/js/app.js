@@ -1,5 +1,7 @@
-import PlayingField from './playing-field/playing-field';
+import PlayingField from './playing-field/PlayingField'; // импорт класса PlayingField
 
-export default round = new PlayingField(...document.querySelectorAll('.cell')); // помещение всех ячеек в конструктор
+const round = new PlayingField(...document.querySelectorAll('.cell')); // помещение всех ячеек в конструктор
 
-
+setInterval(() => {
+  round.showMask();
+}, 1000);
