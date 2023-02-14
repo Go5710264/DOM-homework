@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/images/[name][ext]', // правило наименования
+    assetModuleFilename: '[name][ext]', // переместить в корневую папку
   },
   module: {
     rules: [
