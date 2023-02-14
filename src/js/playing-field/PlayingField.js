@@ -26,6 +26,6 @@ export default class PlayingField {
     что следующая ячейка будет иметь номер предыдущей ячейки */
 
     this.cellNumber = getRandomInt();
-    this.field[this.cellNumber].appendChild(this.mask);
+    return this.field[this.cellNumber].appendChild(this.mask);
   }
 }
