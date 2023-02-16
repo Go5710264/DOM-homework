@@ -14,7 +14,6 @@
     "preshow:dist": "npm run build",
     "show:dist": "live-server dist"
   },
-  "devtool": "source-map",
   "keywords": [],
   "author": "",
   "license": "ISC",
