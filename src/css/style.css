@@ -16,5 +16,6 @@
 }
 
 .mask{
+    cursor: url('../picture/hammer.png'), pointer;
     width: 50px;
 }
