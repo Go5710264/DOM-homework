@@ -1,6 +1,4 @@
 import goblin from '../../picture/goblin.png';
-import hammer from '../../picture/hammer.png';
-
 
 export default class PlayingField {
   constructor(...cells) {
@@ -9,27 +7,27 @@ export default class PlayingField {
     this.mask = document.createElement('img'); // создание тега img
     this.mask.setAttribute('src', goblin); // добавление img атрибута src
     this.mask.classList.add('mask'); // добавление класса mask тегу img
-   
-    this.appearanceCells = [2, 5, 10, 14]; // точки появления маски в начале игры
-   
-    this.cellNumber; // клетка расположения маски
-    // this.cellNumber.addEventListener('mouseover', )
 
+    this.appearanceCells = [2, 5, 10, 14]; // точки появления маски в начале игры
+
+    this.cellNumber = null; // клетка расположения маски
+    // this.cellNumber.addEventListener('mouseover', )
   }
 
   displayMask() { // добавить маску в ячейку
-    return this.field[this.cellNumber].appendChild(this.mask)
+    return this.field[this.cellNumber].appendChild(this.mask);
   }
 
-
   startGame() {
-    this.cellNumber = this.appearanceCells.shift(); // первый элемент в массиве = клетки появления маски
-    this.appearanceCells.push(this.cellNumber); // возвращение элемента в массив на последнюю позицию
-    return this.displayMask() // добавить маску в ячейку
+    this.cellNumber = this.appearanceCells.shift();
+    // первый элемент в массиве = клетки появления маски
+    this.appearanceCells.push(this.cellNumber);
+    // возвращение элемента в массив на последнюю позицию
+    return this.displayMask(); // добавить маску в ячейку
   }
 
   showMask() {
-    const previousCell = this.cellNumber; // предыдущая клетка 
+    const previousCell = this.cellNumber; // предыдущая клетка
 
     function getRandomInt() { // генерация рандомного числа
       const min = Math.ceil(0);
@@ -39,7 +37,8 @@ export default class PlayingField {
 
     this.cellNumber = getRandomInt(); // определение клетки появления
 
-    if (this.cellNumber !== previousCell) { // если номер ячейки не равен предыдущей 
+    if (this.cellNumber !== previousCell) {
+    // если номер ячейки не равен предыдущей
       return this.displayMask(); // добавить маску в ячейку
     }
 
@@ -49,7 +48,8 @@ export default class PlayingField {
 
     /*    Даже в такой конструкции, есть вероятность,
     что следующая ячейка будет иметь номер предыдущей ячейки */
-    this.cellNumber = getRandomInt(); // запустить функцию заново, для генерации нового номера ячейки
+    this.cellNumber = getRandomInt();
+    // запустить функцию заново, для генерации нового номера ячейки
     return this.displayMask(); // добавить маску в ячейку
   }
 }

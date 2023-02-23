@@ -1,5 +1,5 @@
 .wrapper{
-    padding: 100px;
+    padding: auto;
     background-color: brown;
 }
 
@@ -16,6 +16,7 @@
 }
 
 .mask{
-    cursor: url('../picture/hammer.png'), pointer;
     width: 50px;
+    cursor: url(../picture/hammer.cur), auto;
+
 }
