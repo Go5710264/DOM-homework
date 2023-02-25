@@ -9,7 +9,8 @@ const timerId = setInterval(() => {
     return round.showMask();
   }
   if (round.newScore.miss.textContent === '5') {
-    return clearTimeout(timerId);
+    clearTimeout(timerId);
+    return alert('Вы проиграли!');
   }
   round.newScore.addMiss(); // добавление пропуска маски
   return round.showMask();

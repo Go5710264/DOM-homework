@@ -8,10 +8,10 @@ export default class GameScore {
   }
 
   addPoint() {
-    this.point.textContent =+ 1;
+    this.point.textContent = +this.point.textContent + 1;
   }
 
   addMiss() {
-    this.miss.textContent =+ 1;
+    this.miss.textContent = +this.miss.textContent + 1;
   }
 }

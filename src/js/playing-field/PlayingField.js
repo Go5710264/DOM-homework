@@ -17,7 +17,6 @@ export default class PlayingField {
     this.field.forEach((cell) => cell.addEventListener('click', () => {
       if (cell.firstElementChild === this.mask) {
         this.newScore.addPoint();
-        // return this.showMask();
         this.mask.classList.add('hide-mask');
         return;
       }
