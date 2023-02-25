@@ -3,7 +3,7 @@ import GameScore from '../game-score/GameScore';
 
 export default class PlayingField {
   constructor() {
-    this.field = document.querySelectorAll('.cell')
+    this.field = document.querySelectorAll('.cell');
 
     this.mask = document.createElement('img'); // создание тега img
     this.mask.setAttribute('src', goblin); // добавление img атрибута src
@@ -14,22 +14,15 @@ export default class PlayingField {
     this.cellNumber = null; // клетка расположения маски
     this.newScore = new GameScore();
 
-    // this.mask.addEventListener('click', () => { // при нажатии на маску +1 балл
-    //   newScore.addPoint();
-    //   this.showMask();
-    // });
-
-    console.log(this.field)
-
     this.field.forEach((cell) => cell.addEventListener('click', () => {
-      if(cell.firstElementChild === this.mask) {
+      if (cell.firstElementChild === this.mask) {
         this.newScore.addPoint();
-        return this.showMask();
+        // return this.showMask();
+        this.mask.classList.add('hide-mask');
+        return;
       }
-      this.newScore.addMiss()
-    }))
-
-
+      this.newScore.addMiss();
+    }));
   }
 
   displayMask() { // добавить маску в ячейку
@@ -54,13 +47,6 @@ export default class PlayingField {
     }
 
     this.cellNumber = getRandomInt(); // определение клетки появления
-    // this.newScore.addMiss(); // добавление пропуска маски
-
-
-// переключение между нажатием на маску и появлением маски в новом месте также дает промах!!!!
-    
-
-
 
     if (this.cellNumber !== previousCell) {
     // если номер ячейки не равен предыдущей
@@ -75,6 +61,4 @@ export default class PlayingField {
     // запустить функцию заново, для генерации нового номера ячейки
     return this.displayMask(); // добавить маску в ячейку
   }
-
-
 }
