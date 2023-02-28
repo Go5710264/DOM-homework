@@ -1,6 +1,6 @@
 import PlayingField from './playing-field/PlayingField'; // импорт класса PlayingField
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
   const round = new PlayingField(); // помещение всех ячеек в конструктор
   round.startGame();
 
